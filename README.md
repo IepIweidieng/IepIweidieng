@@ -1,4 +1,4 @@
-### 👋👋👋 <p id="begin" align="right"><a href="#end"><sup><code>goto end</code></sup></a></p>
+### 👋 *Hello, World!* 👋 <p id="begin" align="right"><a href="#end"><sup><code>goto end</code></sup></a></p>
 
 **IepIweidieng/IepIweidieng** is an ✨ _IID_ ✨ repository because its `README.md` (this IID file) appears on IID's GitHub profile.
 
