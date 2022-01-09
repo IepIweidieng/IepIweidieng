@@ -52,3 +52,4 @@ jobs:
           plugin_lines: yes
           plugin_traffic: yes
           repositories_forks: no
+          repositories_affiliations: owner, collaborator, organization_member
