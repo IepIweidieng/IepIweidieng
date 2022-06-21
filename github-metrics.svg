@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="1104" class="">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="1095" class="">
     <defs>
         <style/>
     </defs>
@@ -189,7 +189,7 @@
                 <h3 class="field">Recently used languages</h3>
                 <small>No recent push activity found
                 
-                  over last 24 days</small>
+                  over last 25 days</small>
                 <div class="row fill-width">
                     <section>
                     </section>
@@ -433,7 +433,7 @@
                                 <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
                             </svg>
                             From
-                            <span class="blue space">ccns/ccns.github.io</span>
+                            <span class="blue space">ccns/dreambbs</span>
                         </div>
                     </section>
                     <section class="largeable-column-fields">
@@ -441,7 +441,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"/>
                             </svg>
-                            On 19 Jun 2022, 12:28:21
+                            On 21 Jun 2022, 17:42:07
                         </div>
                     </section>
                 </div>
@@ -451,14 +451,14 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
                             </svg>
-                            docs(README.md): clarify the steps of .ejs editing
+                            docs(INDENT): fix erroneously calling "位元運算子" as just "運算子"
                         </div>
                         <div class="field">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"/>
                             </svg>
-                            <span class="code">ddc5c929</span>
-                            <span class="code">README.md</span>
+                            <span class="code">3274f1ea</span>
+                            <span class="code">INDENT.md</span>
                             <span class="code"><span class="snippet additions">++1</span> <span class="snippet deletions">--1</span></span>
                         </div>
                     </section>
@@ -466,14 +466,14 @@
                 <div class="row">
                     <section class="snippet">
                         <div class="body markdown">
-                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -24,7 +24,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">- 專案資料: 編輯 `resources/projects.json`<br /></span><span class="token prefix unchanged">·</span><span class="token line">- 活動照片: 編輯 `resources/timeline.json`<br /></span><span class="token prefix unchanged">·</span><span class="token line">- 定期聚資料: 直接執行下個步驟，腳本會幫你抓 kktix 資料<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">- 其他網頁: 請先看 `ejs/` 資料夾底下有沒有名字一樣的範本檔 (`*.ejs`)，避免執行下一步驟時將舊資訊覆蓋回來<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">- 其他網頁: 請先檢查 `ejs/` 資料夾底下有沒有名字一樣的範本檔 (`*.ejs`)。有的話請編輯範本檔而非 HTML 檔，避免執行下一步驟時將舊資訊覆蓋回來<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line">### 步驟二：跑腳本<br /></span><span class="token prefix unchanged">·</span><span class="token line">跑以下指令以產生新的 `*.html`，並推送至 GitHub</span></span></code>
+                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -462,7 +462,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line">## `(` &amp; `)`<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">- 二元非賦值運算子，其運算元若直接包含與其不同的二元運算子，應以 `(` 與 `)` 將其包圍<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">- 二元非賦值位元運算子，其運算元若直接包含與其不同的二元運算子，應以 `(` 與 `)` 將其包圍<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line">**Good:**<br /></span><span class="token prefix unchanged">·</span><span class="token line">```c</span></span></code>
                         </div>
                     </section>
                 </div>
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 22 Jun 2022, 04:09:31 (timezone Asia/Taipei) with lowlighter/metrics@3.24.0</span>
+                <span>Last updated 22 Jun 2022, 05:07:52 (timezone Asia/Taipei) with lowlighter/metrics@3.24.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
