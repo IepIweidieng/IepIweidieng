@@ -170,7 +170,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                         <path fill-rule="evenodd" d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z"/>
                                     </svg>
-                                    110 views in last two weeks
+                                    119 views in last two weeks
                                 </div>
                             </section>
                         </div>
@@ -441,7 +441,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"/>
                             </svg>
-                            On 30 Jul 2022, 19:49:52
+                            On 31 Jul 2022, 05:53:29
                         </div>
                     </section>
                 </div>
@@ -451,15 +451,19 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
                             </svg>
-                            feat(Demo): allow customizing clear color with _RenderClearColor
+                            feat(Demo): allow using config _SoundPlaybackVolumn to control playback volumn
 
-ref: muggy8/CubismWebSamples@23e61c8b38f37e9b6ffe80f506f5c8dfb8349f85
+* src/lappwavfilehandler.ts:
+    * add import for appConfig
+    * add _audioGain for control the playback volumn
+    * start():
+        * set playback volumn before playing
                         </div>
                         <div class="field">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"/>
                             </svg>
-                            <span class="code">88fd5202</span>
+                            <span class="code">6c70f511</span>
                             <span class="code">Samples/TypeScript/Demo/src/lappdefine.ts</span>
                             <span class="code"><span class="snippet additions">++4</span> <span class="snippet deletions">--0</span></span>
                         </div>
@@ -468,14 +472,14 @@ ref: muggy8/CubismWebSamples@23e61c8b38f37e9b6ffe80f506f5c8dfb8349f85
                 <div class="row">
                     <section class="snippet">
                         <div class="body markdown">
-                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -78,6 +78,10 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"> RenderTargetWidth: number;<br /></span><span class="token prefix unchanged">·</span><span class="token line"> RenderTargetHeight: number;<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line"> // Set the render screen to this color when the screen is cleared<br /></span><span class="token prefix inserted">+</span><span class="token line"> // [red, green, blue, alpha] (0.0 to 1.0)<br /></span><span class="token prefix inserted">+</span><span class="token line"> _RenderClearColor: [number, number, number, number];<br /></span><span class="token prefix inserted">+</span><span class="token line"><br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"> // Relative path to the custom configuration file<br /></span><span class="token prefix unchanged">·</span><span class="token line"> _ConfigFileName: string;<br /></span><span class="token prefix unchanged">·</span><span class="token line">}</span></span></code>
+                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -89,6 +89,10 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"> // [red, green, blue, alpha] (0.0 to 1.0)<br /></span><span class="token prefix unchanged">·</span><span class="token line"> _RenderClearColor: [number, number, number, number];<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line"> // Set the playback volumn of motion sound<br /></span><span class="token prefix inserted">+</span><span class="token line"> // Normal: 100% (1.0), mute: 0% (0.0)<br /></span><span class="token prefix inserted">+</span><span class="token line"> _SoundPlaybackVolumn: number;<br /></span><span class="token prefix inserted">+</span><span class="token line"><br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"> // Relative path to the custom configuration file<br /></span><span class="token prefix unchanged">·</span><span class="token line"> _ConfigFileName: string;<br /></span><span class="token prefix unchanged">·</span><span class="token line">}</span></span></code>
                         </div>
                     </section>
                 </div>
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 2 Aug 2022, 13:02:19 (timezone Asia/Taipei) with lowlighter/metrics@3.26.0</span>
+                <span>Last updated 2 Aug 2022, 14:12:17 (timezone Asia/Taipei) with lowlighter/metrics@3.26.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
