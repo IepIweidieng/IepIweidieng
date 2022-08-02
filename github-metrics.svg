@@ -451,26 +451,30 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
                             </svg>
-                            feat(Demo): make canvas fit the element rather than just fill the screen
+                            feat(Demo): support high DPI display (enabled by config _CanvasHighDpi)
+
+This feature requires either:
+* The config CanvasSize is explicitly given and is not "auto"
+* or the size of the canvas is set by CSS styling.
+
+If not, this feature should be disabled by setting _CanvasHighDpi to false.
 
 * src/lappdelegate.ts:
-    * add _resizeObserver for getting the pending canvas size
-    * add _canvasSize for keeping the pending canvas size
-    * move canvas size initializing codes to _initializeCanvasSize()
-    * use _initailizeResizeHandler() for setting up the resize handlers
-    * make _resizeCanvas() update the canvas size using the pending canvas size
-    * make canvas fill the parent element by setting its style
-* src/main.ts:
-    * drop now-useless callback setting of window.onresize
-* index.html:
-    * set height &amp; width of the page to 100% to make the canvas fill the screen
+    * add canvasPixelRatio for keeping the effective pixel ratio
+    * _initializeResizeHandler():
+        * use canvas size in device pixels if possible
+        * add pixel ratio change handler
+    * scale the position for MouseEvent &amp; TouchEvent with canvasPixelRatio
+* src/lappview.ts:
+    * initializeSprite():
+        * scale the image dimension with canvasPixelRatio
                         </div>
                         <div class="field">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"/>
                             </svg>
-                            <span class="code">faee4305</span>
-                            <span class="code">Samples/TypeScript/Demo/index.html</span>
+                            <span class="code">95e6196b</span>
+                            <span class="code">Samples/TypeScript/Demo/lappconfigdefault.json</span>
                             <span class="code"><span class="snippet additions">++2</span> <span class="snippet deletions">--0</span></span>
                         </div>
                     </section>
@@ -478,14 +482,14 @@
                 <div class="row">
                     <section class="snippet">
                         <div class="body markdown">
-                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -6,6 +6,8 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">&lt;title&gt;TypeScript HTML App&lt;/title&gt;<br /></span><span class="token prefix unchanged">·</span><span class="token line">&lt;style&gt;<br /></span><span class="token prefix unchanged">·</span><span class="token line">  html, body {<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">      height: 100%;<br /></span><span class="token prefix inserted">+</span><span class="token line">      width: 100%;<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">      margin: 0;<br /></span><span class="token prefix unchanged">·</span><span class="token line">      overflow: hidden;<br /></span><span class="token prefix unchanged">·</span><span class="token line">  }</span></span></code>
+                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -3,6 +3,8 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line"> "CanvasSize": "auto",<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line"> "_CanvasHighDpi": true,<br /></span><span class="token prefix inserted">+</span><span class="token line"><br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"> "ViewScale": 1.0,<br /></span><span class="token prefix unchanged">·</span><span class="token line"> "ViewMaxScale": 2.0,<br /></span><span class="token prefix unchanged">·</span><span class="token line"> "ViewMinScale": 0.8,</span></span></code>
                         </div>
                     </section>
                 </div>
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 2 Aug 2022, 22:09:12 (timezone Asia/Taipei) with lowlighter/metrics@3.26.0</span>
+                <span>Last updated 2 Aug 2022, 23:09:06 (timezone Asia/Taipei) with lowlighter/metrics@3.26.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
