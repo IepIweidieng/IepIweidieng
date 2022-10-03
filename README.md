@@ -8,6 +8,6 @@ Wei-Cheng Yeh (IID)'s GitHub stats | Most Used Languages
 
 #### [*Metrics*](https://github.com/lowlighter/metrics)
 
-![Metrics](https://github.com/IepIweidieng/IepIweidieng/blob/metrics/github-metrics.svg)
+<img alt="Metrics" src="https://github.com/IepIweidieng/IepIweidieng/blob/metrics/github-metrics.svg" width="100%"/>
 
 <p id="end" align="right"><a href="#begin"><code>goto begin</code></a></p>

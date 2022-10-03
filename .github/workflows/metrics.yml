@@ -27,6 +27,7 @@ jobs:
           committer_branch: "metrics"
           template: classic
           base: header, activity, repositories, metadata
+          config_display: columns
           config_timezone: Asia/Taipei
           plugin_code: yes
           plugin_code_lines: 12
