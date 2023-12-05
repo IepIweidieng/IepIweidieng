@@ -449,16 +449,38 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
                             </svg>
-                            feat(Term resizing): use vget_xo() for XO functions for redrawing the Xover list on I_RESIZETERM
+                            chore(*_edit()): check `echo` for flag GCARRY instead of illogically against DOECHO
 
-89 invocations of vget() have been changed into vget_xo().
+This is a follow-up of 30b5d73e8945e28d4b0e1fb0e073481dfaf78aa4
+
+* maple/talk.c:
+    * pal_edit()
+    * banmsg_edit()
+* so/admin.c:
+    * admin_edit()
+* so/banmail.c:
+    * banmail_edit()
+* so/chatmenu.c:
+    * chat_edit()
+* so/contact.c:
+    * contact_edit()
+* so/memorandum.c:
+    * memorandum_edit()
+* so/observe.c:
+    * observe_edit()
+* so/personal.c:
+    * personal_edit()
+* so/showvote.c:
+    * show_edit()
+* so/violate.c:
+    * viol_edit()
                         </div>
                         <div class="field">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"/>
                             </svg>
-                            <span class="code">03b66c69</span>
-                            <span class="code">so/personal.c</span>
+                            <span class="code">d15ac3eb</span>
+                            <span class="code">so/admin.c</span>
                             <span class="code">
                                 <span class="snippet additions">++1</span>
                                 <span class="snippet deletions">--1</span>
@@ -469,14 +491,14 @@
                 <div class="row">
                     <section class="snippet">
                         <div class="body markdown">
-                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -584,7 +584,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">   if (personal-&gt;state &amp; PB_OPEN)<br /></span><span class="token prefix unchanged">·</span><span class="token line">       return XO_NONE;<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">   if (!vget(B_LINES_REF, 0, "�ڵ��}�O�z��: ", msg, sizeof(msg), DOECHO))<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">   if (!vget_xo(xo, B_LINES_REF, 0, "�ڵ��}�O�z��: ", msg, sizeof(msg), DOECHO))<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">       return XO_FOOT;<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line">   if (vans("�T�w�ڵ����ӽжܡH[y/N]") != 'y')</span></span></code>
+                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -96,7 +96,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">ADMIN *admin,<br /></span><span class="token prefix unchanged">·</span><span class="token line">int echo)<br /></span><span class="token prefix unchanged">·</span><span class="token line">{<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">if (echo == DOECHO)<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">if (!(echo &amp; GCARRY))<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">    memset(admin, 0, sizeof(ADMIN));<br /></span><span class="token prefix unchanged">·</span><span class="token line">if (vget(B_LINES_REF, 0, "�W�ů��ȦC���G", admin-&gt;name, sizeof(admin-&gt;name), echo))<br /></span><span class="token prefix unchanged">·</span><span class="token line">    return 1;</span></span></code>
                         </div>
                     </section>
                 </div>
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 5 Dec 2023, 11:09:09 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 5 Dec 2023, 12:09:55 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
