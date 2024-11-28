@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="1258" class="columns">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="1415" class="columns">
     <defs>
         <style/>
     </defs>
@@ -431,7 +431,7 @@
                                 <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
                             </svg>
                             From
-                            <span class="blue space">IepIweidieng/osu2tja</span>
+                            <span class="blue space">IepIweidieng/TJAPlayer3</span>
                         </div>
                     </section>
                     <section class="largeable-column-fields">
@@ -439,7 +439,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"/>
                             </svg>
-                            On 26 Nov 2024, 02:09:13
+                            On 27 Nov 2024, 18:32:04
                         </div>
                     </section>
                 </div>
@@ -449,17 +449,17 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
                             </svg>
-                            feat: use simpliest decimal without digit count limits for float outputs
+                            docs(tja.md): POP'S MUSIC -&gt; pop'n music: fix typo
                         </div>
                         <div class="field">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"/>
                             </svg>
-                            <span class="code">3400aa48</span>
-                            <span class="code">tja2osu/tja2osu.py</span>
+                            <span class="code">73bb92eb</span>
+                            <span class="code">tja.md</span>
                             <span class="code">
-                                <span class="snippet additions">++2</span>
-                                <span class="snippet deletions">--2</span>
+                                <span class="snippet additions">++1</span>
+                                <span class="snippet deletions">--1</span>
                             </span>
                         </div>
                     </section>
@@ -467,14 +467,14 @@
                 <div class="row">
                     <section class="snippet">
                         <div class="body markdown">
-                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -435,8 +435,8 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">               get_last_red_tm()["measure"], len(pure_data), \<br /></span><span class="token prefix unchanged">·</span><span class="token line">               "".join(pure_data))<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">       p2= "%.4f %.2f" % (get_last_red_tm()["bpm"], \<br /></span><span class="token prefix deleted">-</span><span class="token line">               get_t_unit(get_last_red_tm(), max(1, tot_note)) * max(1, tot_note))<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">       p2= "%s %s" % (repr(get_last_red_tm()["bpm"]), \<br /></span><span class="token prefix inserted">+</span><span class="token line">               repr(get_t_unit(get_last_red_tm(), max(1, tot_note)) * max(1, tot_note)))<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">       print_with_pended(p1, file=sys.stderr)<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line">   #debug</span></span></code>
+                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -363,7 +363,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">For specifying the inner chart of solely the Oni difficulty with the same audio as in official AC15 and later official games (except only *&lt;ruby&gt;ハ&lt;rt&gt;Ha&lt;/rt&gt; レ&lt;rt&gt;re&lt;/rt&gt; 晴&lt;rt&gt;Ha&lt;/rt&gt; レ&lt;rt&gt;re&lt;/rt&gt; ユ&lt;rt&gt;Yu&lt;/rt&gt; カ&lt;rt&gt;ka&lt;/rt&gt; イ&lt;rt&gt;i&lt;/rt&gt;&lt;/ruby&gt;* inner Hard in AC15), [`COURSE:Edit`](#course) is commonly used instead.<br /></span><span class="token prefix unchanged">·</span><span class="token line">* Reference: &lt;https://wikiwiki.jp/taiko-fumen/%E5%8F%8E%E9%8C%B2%E6%9B%B2/%E3%82%80%E3%81%9A%E3%81%8B%E3%81%97%E3%81%84/%E3%83%8F%E3%83%AC%E6%99%B4%E3%83%AC%E3%83%A6%E3%82%AB%E3%82%A4#another&gt;<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">*&lt;ruby&gt;別&lt;rt&gt;betsu&lt;/rt&gt; 譜&lt;rt&gt;fu&lt;/rt&gt; 面&lt;rt&gt;men&lt;/rt&gt;&lt;/ruby&gt;* "another notechart(s)" was a tentative name used during the development of AC11. The now-official name *&lt;ruby&gt;裏&lt;rt&gt;ura&lt;/rt&gt; 譜&lt;rt&gt;fu&lt;/rt&gt; 面&lt;rt&gt;men&lt;/rt&gt;&lt;/ruby&gt;* "inner notechart" originated from *POP's MUSIC* 11 (2004), developed by Konami.<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">*&lt;ruby&gt;別&lt;rt&gt;betsu&lt;/rt&gt; 譜&lt;rt&gt;fu&lt;/rt&gt; 面&lt;rt&gt;men&lt;/rt&gt;&lt;/ruby&gt;* "another notechart(s)" was a tentative name used during the development of AC11. The now-official name *&lt;ruby&gt;裏&lt;rt&gt;ura&lt;/rt&gt; 譜&lt;rt&gt;fu&lt;/rt&gt; 面&lt;rt&gt;men&lt;/rt&gt;&lt;/ruby&gt;* "inner notechart" originated from *pop'n music* 11 (2004), developed by Konami.<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line">* Reference: *まだあるの？「太鼓の達人１１」最後のコマンド大公開！* ("There is still more? The last command of Taiko no Tatsujin 11 greatly revealed!"). (2008-05-15). 開発日記（ブログ）｜太鼓の達人開発ブログ ("Development diary (blog) | Taiko no Tatsujin Development Blog"). &lt;https://web.archive.org/web/20160213010255/http://taikoblog.namco-ch.net/blog/2008/05/post_36.html#more&gt;<br /></span><span class="token prefix unchanged">·</span></span></code>
                         </div>
                     </section>
                 </div>
             </section>
             <footer>
                 <span>These metrics include private contributions</span>
-                <span>Last updated 28 Nov 2024, 12:13:41 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 28 Nov 2024, 13:11:51 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
