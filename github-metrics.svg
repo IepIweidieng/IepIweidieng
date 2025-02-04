@@ -449,16 +449,19 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
                             </svg>
-                            fix: remove redundant initial song playback buffer for Dans
+                            fix SongPlaybackSpeed misused to initialize speed-independent animation values
+
+* Config menu scrolling animation: OpenTaiko/src/Stages/04.Config/CActConfigList.cs
+* Training mode scroll multiplier change animation: OpenTaiko/src/Stages/07.Game/CActTaikoScrollSpeed.cs
                         </div>
                         <div class="field">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"/>
                             </svg>
-                            <span class="code">3db9ae54</span>
-                            <span class="code">OpenTaiko/src/Songs/CTja.cs</span>
+                            <span class="code">a732922a</span>
+                            <span class="code">OpenTaiko/src/Stages/04.Config/CActConfigList.cs</span>
                             <span class="code">
-                                <span class="snippet additions">++3</span>
+                                <span class="snippet additions">++1</span>
                                 <span class="snippet deletions">--1</span>
                             </span>
                         </div>
@@ -467,14 +470,14 @@
                 <div class="row">
                     <section class="snippet">
                         <div class="body markdown">
-                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -2180,7 +2180,9 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">this.isOFFSET_Negative = (msOFFSET_Signed &lt; 0);<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line">//#STARTと同時に鳴らすのはどうかと思うけどしゃーなしだな。<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">AddMusicPreTimeMs(); // 音源を鳴らす前に遅延。<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">if (n参照中の難易度 != (int)Difficulty.Dan) { // applied instead at #NEXTSONG for Dans<br /></span><span class="token prefix inserted">+</span><span class="token line">	AddMusicPreTimeMs(); // 音源を鳴らす前に遅延。<br /></span><span class="token prefix inserted">+</span><span class="token line">}<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">var chip = new CChip();<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line">chip.nChannelNo = 0x01;</span></span></code>
+                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -1145,7 +1145,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">#region [ 初めての進行描画 ]<br /></span><span class="token prefix unchanged">·</span><span class="token line">//-----------------<br /></span><span class="token prefix unchanged">·</span><span class="token line">if (base.IsFirstDraw) {<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">	this.nスクロール用タイマ値 = (long)(SoundManager.PlayTimer.NowTimeMs * OpenTaiko.ConfigIni.SongPlaybackSpeed);<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">	this.nスクロール用タイマ値 = OpenTaiko.Timer.NowTimeMs;<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">	this.ct三角矢印アニメ.Start(0, 9, 50, OpenTaiko.Timer);<br /></span><span class="token prefix unchanged">·</span><span class="token line">	base.IsFirstDraw = false;<br /></span><span class="token prefix unchanged">·</span><span class="token line">}</span></span></code>
                         </div>
                     </section>
                 </div>
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 5 Feb 2025, 06:09:39 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 5 Feb 2025, 07:09:56 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
