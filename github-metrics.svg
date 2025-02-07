@@ -449,16 +449,16 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
                             </svg>
-                            refactor: replace usage of SongPlaybackSpeed with CTja GameTime &lt;-&gt; TjaTime converters
+                            fix GetNowPBMTime() returned wrong beat position for charts with positive `OFFSET:`
                         </div>
                         <div class="field">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"/>
                             </svg>
-                            <span class="code">628b5061</span>
-                            <span class="code">OpenTaiko/src/Stages/07.Game/CFloorManagement.cs</span>
+                            <span class="code">7c25d8d3</span>
+                            <span class="code">OpenTaiko/src/Stages/07.Game/CStage演奏画面共通.cs</span>
                             <span class="code">
-                                <span class="snippet additions">++2</span>
+                                <span class="snippet additions">++1</span>
                                 <span class="snippet deletions">--1</span>
                             </span>
                         </div>
@@ -467,14 +467,15 @@
                 <div class="row">
                     <section class="snippet">
                         <div class="body markdown">
-                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -48,8 +48,9 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">public static int MaxNumberOfLives = 5;<br /></span><span class="token prefix unchanged">·</span><span class="token line">public static int CurrentNumberOfLives = 5;<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">// prevents one from playing in 7.65x or so speed and passing the life challenge easily.<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">public static double InvincibilityDurationSpeedDependent {<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">	get =&gt; ((double)InvincibilityDuration) / OpenTaiko.ConfigIni.SongPlaybackSpeed;<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">	get =&gt; CTja.TjaTimeToGameTime(InvincibilityDuration);<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">}<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line">// ms</span></span></code>
+                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -4287,7 +4287,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">float bpm_time = 0;<br /></span><span class="token prefix unchanged">·</span><span class="token line">int last_input = 0;<br /></span><span class="token prefix unchanged">·</span><span class="token line">float last_bpm_change_time;<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">play_time = (float)CTja.GameTimeToTjaTime(SoundManager.PlayTimer.NowTimeMs) - tja.msOFFSET_Abs;<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">play_time = (float)CTja.TjaTimeToRawTjaTimeNote(CTja.GameTimeToTjaTime(SoundManager.PlayTimer.NowTimeMs), tja);<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line">for (int i = 1; ; i++) {<br /></span><span class="token prefix unchanged">·</span><span class="token line">	//BPMCHANGEの数越えた
+</span></span></code>
                         </div>
                     </section>
                 </div>
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 7 Feb 2025, 15:10:29 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 7 Feb 2025, 16:13:45 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
