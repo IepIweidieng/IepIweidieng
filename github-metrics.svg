@@ -449,14 +449,14 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
                             </svg>
-                            fix event chips were processed with 1ms delay
+                            fix wrong returned chip index from CTja.GetListChipIndexOfMeasure() when negative beat duration presents
                         </div>
                         <div class="field">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"/>
                             </svg>
-                            <span class="code">ce3e0833</span>
-                            <span class="code">OpenTaiko/src/Songs/TJA/CChip.cs</span>
+                            <span class="code">e8c824ca</span>
+                            <span class="code">OpenTaiko/src/Songs/CTja.cs</span>
                             <span class="code">
                                 <span class="snippet additions">++1</span>
                                 <span class="snippet deletions">--1</span>
@@ -467,15 +467,14 @@
                 <div class="row">
                     <section class="snippet">
                         <div class="body markdown">
-                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -303,7 +303,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">7, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 5, 5, 5, //0x20<br /></span><span class="token prefix unchanged">·</span><span class="token line">5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, //0x30<br /></span><span class="token prefix unchanged">·</span><span class="token line">5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, //0x40<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">9, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, //0x50<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, //0x50 // preserve definition order of bar lines relative to notes<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, //0x60<br /></span><span class="token prefix unchanged">·</span><span class="token line">5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, //0x70<br /></span><span class="token prefix unchanged">·</span><span class="token line">5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, //0x80
-</span></span></code>
+                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -4200,7 +4200,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">CChip pChip = this.listChip[i];<br /></span><span class="token prefix unchanged">·</span><span class="token line">if ((iMeasure1to == 0) ? // initial song position<br /></span><span class="token prefix unchanged">·</span><span class="token line">	pChip.n発声時刻ms &gt;= 0<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">	: (pChip.nChannelNo == 0x50 &amp;&amp; pChip.n整数値_内部番号 &gt;= iMeasure1to)<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">	: (pChip.nChannelNo == 0x50 &amp;&amp; pChip.n整数値_内部番号 == iMeasure1to)<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">	) {<br /></span><span class="token prefix unchanged">·</span><span class="token line">	return i;<br /></span><span class="token prefix unchanged">·</span><span class="token line">}</span></span></code>
                         </div>
                     </section>
                 </div>
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 25 Feb 2025, 18:11:46 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 25 Feb 2025, 19:09:19 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
