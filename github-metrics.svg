@@ -456,9 +456,9 @@
                                 <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"/>
                             </svg>
                             <span class="code">902e5bed</span>
-                            <span class="code">OpenTaiko/src/Stages/07.Game/Taiko/CStage演奏ドラム画面.cs</span>
+                            <span class="code">OpenTaiko/src/Stages/07.Game/Taiko/Dan_Cert.cs</span>
                             <span class="code">
-                                <span class="snippet additions">++3</span>
+                                <span class="snippet additions">++1</span>
                                 <span class="snippet deletions">--0</span>
                             </span>
                         </div>
@@ -467,14 +467,14 @@
                 <div class="row">
                     <section class="snippet">
                         <div class="body markdown">
-                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -342,6 +342,9 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">base.ePhaseID = CStage.EPhase.Common_FADEIN;<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line">this.actFI.tフェードイン開始();<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">for (int i = 0; i &lt; OpenTaiko.ConfigIni.nPlayerCount; ++i) {<br /></span><span class="token prefix inserted">+</span><span class="token line">	this.actLaneTaiko.BranchText_FadeIn(null, i);<br /></span><span class="token prefix inserted">+</span><span class="token line">}<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line">// TJAPlayer3.Sound管理.tDisableUpdateBufferAutomatically();<br /></span><span class="token prefix unchanged">·</span><span class="token line">base.IsFirstDraw = false;</span></span></code>
+                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -427,6 +427,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">		Counter_Wait = null;<br /></span><span class="token prefix unchanged">·</span><span class="token line">		Counter_Out = new CCounter(0, 90, 3, OpenTaiko.Timer);<br /></span><span class="token prefix unchanged">·</span><span class="token line">		Counter_Text = new CCounter(0, 2899, 1, OpenTaiko.Timer);<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">		OpenTaiko.stageGameScreen.actLaneTaiko.BranchText_FadeIn(1000, 0);<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">	}<br /></span><span class="token prefix unchanged">·</span><span class="token line">}<br /></span><span class="token prefix unchanged">·</span><span class="token line">if (Counter_Text != null) {</span></span></code>
                         </div>
                     </section>
                 </div>
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 6 Jun 2025, 14:17:42 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 6 Jun 2025, 15:11:48 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
