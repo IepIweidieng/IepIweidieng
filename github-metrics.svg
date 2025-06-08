@@ -462,7 +462,7 @@
                                 <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"/>
                             </svg>
                             <span class="code">f515a932</span>
-                            <span class="code">OpenTaiko/src/Stages/07.Game/Taiko/CActImplLaneTaiko.cs</span>
+                            <span class="code">OpenTaiko/src/Stages/07.Game/Taiko/CActImplBackground.cs</span>
                             <span class="code">
                                 <span class="snippet additions">++1</span>
                                 <span class="snippet deletions">--1</span>
@@ -473,14 +473,14 @@
                 <div class="row">
                     <section class="snippet">
                         <div class="body markdown">
-                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -494,7 +494,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">if (OpenTaiko.ConfigIni.nPlayerCount &lt;= 2) {<br /></span><span class="token prefix unchanged">·</span><span class="token line">	if (OpenTaiko.Tx.Lane_Background_Sub != null) {<br /></span><span class="token prefix unchanged">·</span><span class="token line">		OpenTaiko.Tx.Lane_Background_Sub.t2D描画(OpenTaiko.Skin.Game_Lane_Sub_X[0], OpenTaiko.Skin.Game_Lane_Sub_Y[0]);<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">		if (OpenTaiko.stageGameScreen.bDoublePlay) {<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">		if (OpenTaiko.stageGameScreen.isMultiPlay) {<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">			OpenTaiko.Tx.Lane_Background_Sub.t2D描画(OpenTaiko.Skin.Game_Lane_Sub_X[1], OpenTaiko.Skin.Game_Lane_Sub_Y[1]);<br /></span><span class="token prefix unchanged">·</span><span class="token line">		}<br /></span><span class="token prefix unchanged">·</span><span class="token line">	}</span></span></code>
+                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -528,7 +528,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">	ctFailAnimation?.Tick();<br /></span><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line">	#endregion<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">} else if (!OpenTaiko.stageGameScreen.bDoublePlay &amp;&amp; OpenTaiko.stageSongSelect.nChoosenSongDifficulty[0] != (int)Difficulty.Dan) {<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">} else if (!OpenTaiko.stageGameScreen.isMultiPlay &amp;&amp; OpenTaiko.stageSongSelect.nChoosenSongDifficulty[0] != (int)Difficulty.Dan) {<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">	if (!IsDownNotFound) {<br /></span><span class="token prefix unchanged">·</span><span class="token line">		if (!OpenTaiko.stageGameScreen.bPAUSE) DownScript?.Update();<br /></span><span class="token prefix unchanged">·</span><span class="token line">		DownScript?.Draw();</span></span></code>
                         </div>
                     </section>
                 </div>
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 8 Jun 2025, 16:13:53 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 8 Jun 2025, 17:11:07 (timezone Asia/Taipei) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
